@@ -37,8 +37,7 @@ module.exports = {
 
   // CLI:  webpack-dev-server --hot --inline
   devServer: {
-    contentBase: path.join(__dirname, "public"),
-    port: 8080,
-    watchContentBase: true
+    static: path.join(__dirname, "public"),
+    port: 8080
   }
 };
