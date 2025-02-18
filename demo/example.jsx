@@ -1,11 +1,15 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
+var ReactDOMClient = require('react-dom/client');
 import BasicDragDemo from './BasicDragDemo';
 import DragFoodToAnimalsDemo from './DragFoodToAnimals/DragFoodToAnimalsDemo';
 import DragThingsToBoxesDemo from './DragThingsToBoxes/DragThingsToBoxesDemo';
 import DragElementWithClickHandlers from './DragElementWithClickHandlers';
 
-var App = React.createClass({
+class App extends React.Component {
+	constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
 	render () {
 		return (
@@ -20,6 +24,12 @@ var App = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const rootElement = document.getElementById("app");
+const root = ReactDOMClient.createRoot(rootElement);
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
